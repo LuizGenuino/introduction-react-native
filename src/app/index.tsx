@@ -10,8 +10,8 @@ export default function Index(){
     return (
         <View style={styles.container} >
             <Text style={styles.title} >Hello World!</Text>
-            <Button />
-            <Button />
+            <Button title="Entrar" onPress={handleMessage}/>
+            <Button title="Sair" onPress={handleMessage}/>
         </View>
     )
 }
