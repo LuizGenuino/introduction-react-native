@@ -1,8 +1,10 @@
+import { useState } from "react"
 import { View, Text, StyleSheet, Alert } from "react-native"
 import { Button } from "../components/button/Index"
 import { Input } from "../components/input"
 
 export default function Index(){
+    const [name, setName] = useState<string>()
 
     function handleMessage(){
         return Alert.alert("Usando Alerta!")
@@ -10,8 +12,8 @@ export default function Index(){
 
     return (
         <View style={styles.container} >
-            <Text style={styles.title} >Hello World!</Text>
-            <Input onChangeText={(text)=> console.log(text)}/>
+            <Text style={styles.title} >Ola! {name}</Text>
+            <Input onChangeText={setName}/>
             <Button title="Entrar" onPress={handleMessage}/>
             <Button title="Sair" onPress={handleMessage}/>          
         </View>
